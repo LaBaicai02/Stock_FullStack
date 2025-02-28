@@ -17,7 +17,7 @@ class GitHubStockInfoDataCollector:
     MONGODB_DATABASE = 'GitHubStockInfoDB'
 
     def __init__(self):
-        with open("secret.yml", "r") as file:
+        with open("my_package/secret.yml", "r") as file:
             config = yaml.safe_load(file)
         self.MONGODB_URI = config.get("MONGO_URI", 'mongodb://localhost:27017/')
         self.mongo_handler = MongoDBHandler(self.MONGODB_DATABASE, self.MONGODB_URI)
